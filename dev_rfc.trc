@@ -1,0 +1,610 @@
+
+**** ERROR file opened at 20141215 103636 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:140010695821056 Error in program 'httpd2-prefork': ======> The function module "ZBAPI_GET_DISTRIBUTION_CHANNEL" cannot be used for 'remote' calls.
+T:140010695821056 Error in program 'httpd2-prefork': <* RfcReceive [13] : returns 3:RFC_SYS_EXCEPTION
+T:140010695821056 Error in program 'httpd2-prefork': <* RfcCallReceive [13] : returns 3:RFC_SYS_EXCEPTION
+
+**** ERROR file opened at 20141215 103719 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:140010695821056 Error in program 'httpd2-prefork': ======> The function module "ZBAPI_GET_DISTRIBUTION_CHANNEL" cannot be used for 'remote' calls.
+T:140010695821056 Error in program 'httpd2-prefork': <* RfcReceive [13] : returns 3:RFC_SYS_EXCEPTION
+T:140010695821056 Error in program 'httpd2-prefork': <* RfcCallReceive [13] : returns 3:RFC_SYS_EXCEPTION
+
+**** ERROR file opened at 20141215 103916 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:140010695821056 Error in program 'httpd2-prefork': ======> The function module "ZBAPI_GET_DISTRIBUTION_CHANNEL" cannot be used for 'remote' calls.
+T:140010695821056 Error in program 'httpd2-prefork': <* RfcReceive [13] : returns 3:RFC_SYS_EXCEPTION
+T:140010695821056 Error in program 'httpd2-prefork': <* RfcCallReceive [13] : returns 3:RFC_SYS_EXCEPTION
+
+**** ERROR file opened at 20141215 104024 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:140010695821056 Error in program 'httpd2-prefork': ======> The function module "ZBAPI_GET_DISTRIBUTION_CHANNEL" cannot be used for 'remote' calls.
+T:140010695821056 Error in program 'httpd2-prefork': <* RfcReceive [25] : returns 3:RFC_SYS_EXCEPTION
+T:140010695821056 Error in program 'httpd2-prefork': <* RfcCallReceive [25] : returns 3:RFC_SYS_EXCEPTION
+
+**** ERROR file opened at 20141215 104316 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:140010695821056 Error in program 'httpd2-prefork': ======> The function module "ZBAPI_GET_DISTRIBUTION_CHANNEL" cannot be used for 'remote' calls.
+T:140010695821056 Error in program 'httpd2-prefork': <* RfcReceive [13] : returns 3:RFC_SYS_EXCEPTION
+T:140010695821056 Error in program 'httpd2-prefork': <* RfcCallReceive [13] : returns 3:RFC_SYS_EXCEPTION
+>TS> Mon Dec 15 10:43:30 2014
+T:140010695821056 Error in program 'httpd2-prefork': ======> The function module "ZBAPI_GET_DISTRIBUTION_CHANNEL" cannot be used for 'remote' calls.
+T:140010695821056 Error in program 'httpd2-prefork': <* RfcReceive [26] : returns 3:RFC_SYS_EXCEPTION
+T:140010695821056 Error in program 'httpd2-prefork': <* RfcCallReceive [26] : returns 3:RFC_SYS_EXCEPTION
+
+**** ERROR file opened at 20141215 104509 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:140010695821056 Error in program 'httpd2-prefork': ======> The function module "ZBAPI_GET_DISTRIBUTION_CHANNEL" cannot be used for 'remote' calls.
+T:140010695821056 Error in program 'httpd2-prefork': <* RfcReceive [13] : returns 3:RFC_SYS_EXCEPTION
+T:140010695821056 Error in program 'httpd2-prefork': <* RfcCallReceive [13] : returns 3:RFC_SYS_EXCEPTION
+
+**** ERROR file opened at 20141215 104812 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:140010695821056 Error in program 'httpd2-prefork': ======> The function module "ZBAPI_GET_DISTRIBUTION_CHANNEL" cannot be used for 'remote' calls.
+T:140010695821056 Error in program 'httpd2-prefork': <* RfcReceive [13] : returns 3:RFC_SYS_EXCEPTION
+T:140010695821056 Error in program 'httpd2-prefork': <* RfcCallReceive [13] : returns 3:RFC_SYS_EXCEPTION
+>TS> Mon Dec 15 10:48:21 2014
+T:140010695821056 Error in program 'httpd2-prefork': ======> The function module "ZBAPI_GET_DISTRIBUTION_CHANNEL" cannot be used for 'remote' calls.
+T:140010695821056 Error in program 'httpd2-prefork': <* RfcReceive [8] : returns 3:RFC_SYS_EXCEPTION
+T:140010695821056 Error in program 'httpd2-prefork': <* RfcCallReceive [8] : returns 3:RFC_SYS_EXCEPTION
+>TS> Mon Dec 15 10:51:07 2014
+T:140010695821056 Error in program 'httpd2-prefork': ======> The function module "ZBAPI_GET_DISTRIBUTION_CHANNEL" cannot be used for 'remote' calls.
+T:140010695821056 Error in program 'httpd2-prefork': <* RfcReceive [26] : returns 3:RFC_SYS_EXCEPTION
+T:140010695821056 Error in program 'httpd2-prefork': <* RfcCallReceive [26] : returns 3:RFC_SYS_EXCEPTION
+>TS> Mon Dec 15 10:54:28 2014
+T:140010695821056 Error in program 'httpd2-prefork': ======> The function module "ZBAPI_GET_DISTRIBUTION_CHANNEL" cannot be used for 'remote' calls.
+T:140010695821056 Error in program 'httpd2-prefork': <* RfcReceive [9] : returns 3:RFC_SYS_EXCEPTION
+T:140010695821056 Error in program 'httpd2-prefork': <* RfcCallReceive [9] : returns 3:RFC_SYS_EXCEPTION
+
+**** ERROR file opened at 20141215 105832 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:140010695821056 Error in program 'httpd2-prefork': ======> The function module "ZBAPI_GET_DISTRIBUTION_CHANNEL" cannot be used for 'remote' calls.
+T:140010695821056 Error in program 'httpd2-prefork': <* RfcReceive [13] : returns 3:RFC_SYS_EXCEPTION
+T:140010695821056 Error in program 'httpd2-prefork': <* RfcCallReceive [13] : returns 3:RFC_SYS_EXCEPTION
+>TS> Mon Dec 15 10:58:44 2014
+T:140010695821056 Error in program 'httpd2-prefork': ======> The function module "ZBAPI_GET_DISTRIBUTION_CHANNEL" cannot be used for 'remote' calls.
+T:140010695821056 Error in program 'httpd2-prefork': <* RfcReceive [26] : returns 3:RFC_SYS_EXCEPTION
+T:140010695821056 Error in program 'httpd2-prefork': <* RfcCallReceive [26] : returns 3:RFC_SYS_EXCEPTION
+
+**** ERROR file opened at 20141222 130251 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:140315199645440 Error in program 'httpd2-prefork': ======> The function module "SD_CUSTOMER_MAINTAIN_ALL" cannot be used for 'remote' calls.
+T:140315199645440 Error in program 'httpd2-prefork': <* RfcReceive [1] : returns 3:RFC_SYS_EXCEPTION
+T:140315199645440 Error in program 'httpd2-prefork': <* RfcCallReceive [1] : returns 3:RFC_SYS_EXCEPTION
+
+**** ERROR file opened at 20141226 135638 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:140315199645440 Error in program 'httpd2-prefork': ======> Missing R3NAME=... or ASHOST=... in connect_param in RfcOpenEx
+T:140315199645440 Error in program 'httpd2-prefork': ======> 
+
+>>> RfcOpenEx ...
+ Got following connect_param string: 
+   
+<<< RfcOpenEx failed
+
+
+
+**** ERROR file opened at 20141226 135718 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:140315199645440 Error in program 'httpd2-prefork': ======> Missing R3NAME=... or ASHOST=... in connect_param in RfcOpenEx
+T:140315199645440 Error in program 'httpd2-prefork': ======> 
+
+>>> RfcOpenEx ...
+ Got following connect_param string: 
+   
+<<< RfcOpenEx failed
+
+
+
+**** ERROR file opened at 20141226 140518 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:140315199645440 Error in program 'httpd2-prefork': ======> Missing R3NAME=... or ASHOST=... in connect_param in RfcOpenEx
+T:140315199645440 Error in program 'httpd2-prefork': ======> 
+
+>>> RfcOpenEx ...
+ Got following connect_param string: 
+   
+<<< RfcOpenEx failed
+
+
+
+**** ERROR file opened at 20141231 104018 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:140315199645440 Error in program 'httpd2-prefork': ======> Error when posting customer 1105433
+T:140315199645440 Error in program 'httpd2-prefork': <* RfcReceive [2] : returns 3:RFC_SYS_EXCEPTION
+T:140315199645440 Error in program 'httpd2-prefork': <* RfcCallReceive [2] : returns 3:RFC_SYS_EXCEPTION
+
+**** ERROR file opened at 20150107 003308 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:140344171169536 Error in program 'httpd2-prefork': ======> Missing R3NAME=... or ASHOST=... in connect_param in RfcOpenEx
+T:140344171169536 Error in program 'httpd2-prefork': ======> 
+
+>>> RfcOpenEx ...
+ Got following connect_param string: 
+   
+<<< RfcOpenEx failed
+
+
+
+**** ERROR file opened at 20150107 003451 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:140344171169536 Error in program 'httpd2-prefork': ======> Missing R3NAME=... or ASHOST=... in connect_param in RfcOpenEx
+T:140344171169536 Error in program 'httpd2-prefork': ======> 
+
+>>> RfcOpenEx ...
+ Got following connect_param string: 
+   
+<<< RfcOpenEx failed
+
+
+
+**** ERROR file opened at 20150107 100601 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:140344171169536 Error in program 'httpd2-prefork': ======> Type conflict when calling a function module.
+T:140344171169536 Error in program 'httpd2-prefork': <* RfcReceive [2] : returns 3:RFC_SYS_EXCEPTION
+T:140344171169536 Error in program 'httpd2-prefork': <* RfcCallReceive [2] : returns 3:RFC_SYS_EXCEPTION
+
+**** ERROR file opened at 20150108 100921 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:140344171169536 Error in program 'httpd2-prefork': ======> Function parameter "BAPIADSMTP_X" is unknown.
+T:140344171169536 Error in program 'httpd2-prefork': <* RfcReceive [2] : returns 3:RFC_SYS_EXCEPTION
+T:140344171169536 Error in program 'httpd2-prefork': <* RfcCallReceive [2] : returns 3:RFC_SYS_EXCEPTION
+
+**** ERROR file opened at 20150108 130616 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:140344171169536 Error in program 'httpd2-prefork': ======> Function parameter "BAPIAD1VLX" is unknown.
+T:140344171169536 Error in program 'httpd2-prefork': <* RfcReceive [2] : returns 3:RFC_SYS_EXCEPTION
+T:140344171169536 Error in program 'httpd2-prefork': <* RfcCallReceive [2] : returns 3:RFC_SYS_EXCEPTION
+
+**** ERROR file opened at 20150304 145052 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:139755283605248 Error in program 'httpd2-prefork': ======> Error when posting customer 1106048
+T:139755283605248 Error in program 'httpd2-prefork': <* RfcReceive [21] : returns 3:RFC_SYS_EXCEPTION
+T:139755283605248 Error in program 'httpd2-prefork': <* RfcCallReceive [21] : returns 3:RFC_SYS_EXCEPTION
+
+**** ERROR file opened at 20150304 145513 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:139755283605248 Error in program 'httpd2-prefork': ======> Error when posting customer 1106050
+T:139755283605248 Error in program 'httpd2-prefork': <* RfcReceive [1] : returns 3:RFC_SYS_EXCEPTION
+T:139755283605248 Error in program 'httpd2-prefork': <* RfcCallReceive [1] : returns 3:RFC_SYS_EXCEPTION
+
+**** ERROR file opened at 20150422 091412 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:139759019845376 Error in program 'httpd2-prefork': ======> 
+
+>>> RfcOpenEx ...
+ Got following connect_param string: 
+   ASHOST=192.168.0.33 SYSNR=10 CLIENT=120 USER=iming PASSWD=******* 
+<<< RfcOpenEx failed
+
+
+
+**** ERROR file opened at 20150422 091513 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:139759019845376 Error in program 'httpd2-prefork': ======> 
+
+>>> RfcOpenEx ...
+ Got following connect_param string: 
+   ASHOST=192.168.0.33 SYSNR=10 CLIENT=120 USER=iming PASSWD=******* 
+<<< RfcOpenEx failed
+
+
+
+**** ERROR file opened at 20150422 111044 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:139759019845376 Error in program 'httpd2-prefork': ======> 
+
+>>> RfcOpenEx ...
+ Got following connect_param string: 
+   ASHOST=192.168.0.33 SYSNR=10 CLIENT=120 USER=iming PASSWD=******* 
+<<< RfcOpenEx failed
+
+
+
+**** ERROR file opened at 20150422 111145 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:139759019845376 Error in program 'httpd2-prefork': ======> 
+
+>>> RfcOpenEx ...
+ Got following connect_param string: 
+   ASHOST=192.168.0.33 SYSNR=10 CLIENT=120 USER=iming PASSWD=******* 
+<<< RfcOpenEx failed
+
+
+
+**** ERROR file opened at 20150424 100143 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:139759019845376 Error in program 'httpd2-prefork': ======> SAP_CMINIT3 : rc=20 > Connect to SAP gateway failed
+Connect_PM  GWHOST=192.168.0.33, GWSERV=sapgw10, SYSNR=10
+
+LOCATION    CPIC (TCP/IP) on local host
+ERROR       partner not reached (host 192.168.0.33, service 3310)
+TIME        Fri Apr 24 10:01:43 201
+RELEASE     640
+COMPONENT   NI (network interface)
+VERSION     37
+RC          -10
+MODULE      nixxi_r_mt.cpp
+LINE        8840
+DETAIL      NiPConnect2
+SYSTEM CALL SiPeekPendConn
+ERRNO       113
+ERRNO TEXT  No route to host
+COUNTER     2
+
+T:139759019845376 Error in program 'httpd2-prefork': ======> 
+
+>>> RfcOpenEx ...
+ Got following connect_param string: 
+   ASHOST=192.168.0.33 SYSNR=10 CLIENT=120 USER=iming PASSWD=******* 
+<<< RfcOpenEx failed
+
+
+
+**** ERROR file opened at 20150424 101048 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:139759019845376 Error in program 'httpd2-prefork': ======> SAP_CMINIT3 : rc=20 > Connect to SAP gateway failed
+Connect_PM  GWHOST=192.168.0.33, GWSERV=sapgw10, SYSNR=10
+
+LOCATION    CPIC (TCP/IP) on local host
+ERROR       partner not reached (host 192.168.0.33, service 3310)
+TIME        Fri Apr 24 10:10:48 201
+RELEASE     640
+COMPONENT   NI (network interface)
+VERSION     37
+RC          -10
+MODULE      nixxi_r_mt.cpp
+LINE        8840
+DETAIL      NiPConnect2
+SYSTEM CALL SiPeekPendConn
+ERRNO       111
+ERRNO TEXT  Connection refused
+COUNTER     1
+
+T:139759019845376 Error in program 'httpd2-prefork': ======> 
+
+>>> RfcOpenEx ...
+ Got following connect_param string: 
+   ASHOST=192.168.0.33 SYSNR=10 CLIENT=120 USER=iming PASSWD=******* 
+<<< RfcOpenEx failed
+
+
+
+**** ERROR file opened at 20150424 101525 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:139759019845376 Error in program 'httpd2-prefork': ======> SAP_CMINIT3 : rc=20 > Connect to SAP gateway failed
+Connect_PM  GWHOST=192.168.0.33, GWSERV=sapgw10, SYSNR=10
+
+LOCATION    CPIC (TCP/IP) on local host
+ERROR       partner not reached (host 192.168.0.33, service 3310)
+TIME        Fri Apr 24 10:15:25 201
+RELEASE     640
+COMPONENT   NI (network interface)
+VERSION     37
+RC          -10
+MODULE      nixxi_r_mt.cpp
+LINE        8840
+DETAIL      NiPConnect2
+SYSTEM CALL SiPeekPendConn
+ERRNO       111
+ERRNO TEXT  Connection refused
+COUNTER     2
+
+T:139759019845376 Error in program 'httpd2-prefork': ======> 
+
+>>> RfcOpenEx ...
+ Got following connect_param string: 
+   ASHOST=192.168.0.33 SYSNR=10 CLIENT=120 USER=iming PASSWD=******* 
+<<< RfcOpenEx failed
+
+
+
+**** ERROR file opened at 20150424 101754 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:139759019845376 Error in program 'httpd2-prefork': ======> SAP_CMINIT3 : rc=20 > Connect to SAP gateway failed
+Connect_PM  GWHOST=192.168.0.33, GWSERV=sapgw10, SYSNR=10
+
+LOCATION    CPIC (TCP/IP) on local host
+ERROR       partner not reached (host 192.168.0.33, service 3310)
+TIME        Fri Apr 24 10:17:54 201
+RELEASE     640
+COMPONENT   NI (network interface)
+VERSION     37
+RC          -10
+MODULE      nixxi_r_mt.cpp
+LINE        8840
+DETAIL      NiPConnect2
+SYSTEM CALL SiPeekPendConn
+ERRNO       111
+ERRNO TEXT  Connection refused
+COUNTER     1
+
+T:139759019845376 Error in program 'httpd2-prefork': ======> 
+
+>>> RfcOpenEx ...
+ Got following connect_param string: 
+   ASHOST=192.168.0.33 SYSNR=10 CLIENT=120 USER=iming PASSWD=******* 
+<<< RfcOpenEx failed
+
+
+
+**** ERROR file opened at 20150424 101845 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:139759019845376 Error in program 'httpd2-prefork': ======> SAP_CMINIT3 : rc=20 > Connect to SAP gateway failed
+Connect_PM  GWHOST=192.168.0.33, GWSERV=sapgw10, SYSNR=10
+
+LOCATION    CPIC (TCP/IP) on local host
+ERROR       partner not reached (host 192.168.0.33, service 3310)
+TIME        Fri Apr 24 10:18:45 201
+RELEASE     640
+COMPONENT   NI (network interface)
+VERSION     37
+RC          -10
+MODULE      nixxi_r_mt.cpp
+LINE        8840
+DETAIL      NiPConnect2
+SYSTEM CALL SiPeekPendConn
+ERRNO       111
+ERRNO TEXT  Connection refused
+COUNTER     1
+
+T:139759019845376 Error in program 'httpd2-prefork': ======> 
+
+>>> RfcOpenEx ...
+ Got following connect_param string: 
+   ASHOST=192.168.0.33 SYSNR=10 CLIENT=120 USER=iming PASSWD=******* 
+<<< RfcOpenEx failed
+
+
+>TS> Fri Apr 24 10:18:57 2015
+T:139759019845376 Error in program 'httpd2-prefork': ======> SAP_CMINIT3 : rc=20 > Connect to SAP gateway failed
+Connect_PM  GWHOST=192.168.0.33, GWSERV=sapgw10, SYSNR=10
+
+LOCATION    CPIC (TCP/IP) on local host
+ERROR       partner not reached (host 192.168.0.33, service 3310)
+TIME        Fri Apr 24 10:18:57 201
+RELEASE     640
+COMPONENT   NI (network interface)
+VERSION     37
+RC          -10
+MODULE      nixxi_r_mt.cpp
+LINE        8831
+DETAIL      NiPConnect2
+SYSTEM CALL SiPeekPendConn
+ERRNO       111
+ERRNO TEXT  Connection refused
+COUNTER     2
+
+T:139759019845376 Error in program 'httpd2-prefork': ======> 
+
+>>> RfcOpenEx ...
+ Got following connect_param string: 
+   ASHOST=192.168.0.33 SYSNR=10 CLIENT=120 USER=iming PASSWD=******* 
+<<< RfcOpenEx failed
+
+
+>TS> Fri Apr 24 10:19:05 2015
+T:139759019845376 Error in program 'httpd2-prefork': ======> SAP_CMINIT3 : rc=20 > Connect to SAP gateway failed
+Connect_PM  GWHOST=192.168.0.33, GWSERV=sapgw10, SYSNR=10
+
+LOCATION    CPIC (TCP/IP) on local host
+ERROR       partner not reached (host 192.168.0.33, service 3310)
+TIME        Fri Apr 24 10:19:05 201
+RELEASE     640
+COMPONENT   NI (network interface)
+VERSION     37
+RC          -10
+MODULE      nixxi_r_mt.cpp
+LINE        8831
+DETAIL      NiPConnect2
+SYSTEM CALL SiPeekPendConn
+ERRNO       111
+ERRNO TEXT  Connection refused
+COUNTER     3
+
+T:139759019845376 Error in program 'httpd2-prefork': ======> 
+
+>>> RfcOpenEx ...
+ Got following connect_param string: 
+   ASHOST=192.168.0.33 SYSNR=10 CLIENT=120 USER=iming PASSWD=******* 
+<<< RfcOpenEx failed
+
+
+>TS> Fri Apr 24 10:30:14 2015
+T:139759019845376 Error in program 'httpd2-prefork': ======> SAP_CMINIT3 : rc=20 > Connect to SAP gateway failed
+Connect_PM  GWHOST=192.168.0.33, GWSERV=sapgw10, SYSNR=10
+
+LOCATION    CPIC (TCP/IP) on local host
+ERROR       partner not reached (host 192.168.0.33, service 3310)
+TIME        Fri Apr 24 10:30:14 201
+RELEASE     640
+COMPONENT   NI (network interface)
+VERSION     37
+RC          -10
+MODULE      nixxi_r_mt.cpp
+LINE        8831
+DETAIL      NiPConnect2
+SYSTEM CALL SiPeekPendConn
+ERRNO       111
+ERRNO TEXT  Connection refused
+COUNTER     3
+
+T:139759019845376 Error in program 'httpd2-prefork': ======> 
+
+>>> RfcOpenEx ...
+ Got following connect_param string: 
+   ASHOST=192.168.0.33 SYSNR=10 CLIENT=120 USER=iming PASSWD=******* 
+<<< RfcOpenEx failed
+
+
+
+**** ERROR file opened at 20150424 103642 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:139759019845376 Error in program 'httpd2-prefork': ======> SAP_CMINIT3 : rc=20 > Connect to SAP gateway failed
+Connect_PM  GWHOST=192.168.0.33, GWSERV=sapgw10, SYSNR=10
+
+LOCATION    CPIC (TCP/IP) on local host
+ERROR       partner not reached (host 192.168.0.33, service 3310)
+TIME        Fri Apr 24 10:36:42 201
+RELEASE     640
+COMPONENT   NI (network interface)
+VERSION     37
+RC          -10
+MODULE      nixxi_r_mt.cpp
+LINE        8840
+DETAIL      NiPConnect2
+SYSTEM CALL SiPeekPendConn
+ERRNO       111
+ERRNO TEXT  Connection refused
+COUNTER     2
+
+T:139759019845376 Error in program 'httpd2-prefork': ======> 
+
+>>> RfcOpenEx ...
+ Got following connect_param string: 
+   ASHOST=192.168.0.33 SYSNR=10 CLIENT=120 USER=iming PASSWD=******* 
+<<< RfcOpenEx failed
+
+
+>TS> Fri Apr 24 10:58:36 2015
+T:139759019845376 Error in program 'httpd2-prefork': ======> 
+
+>>> RfcOpenEx ...
+ Got following connect_param string: 
+   ASHOST=192.168.0.62 SYSNR=30 CLIENT=312 USER=interface PASSWD=******* 
+<<< RfcOpenEx failed
+
+
+
+**** ERROR file opened at 20150424 110136 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:139759019845376 Error in program 'httpd2-prefork': ======> 
+
+>>> RfcOpenEx ...
+ Got following connect_param string: 
+   ASHOST=192.168.0.62 SYSNR=30 CLIENT=312 USER=interface PASSWD=******* 
+<<< RfcOpenEx failed
+
+
+
+**** ERROR file opened at 20150424 110408 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:139759019845376 Error in program 'httpd2-prefork': ======> 
+
+>>> RfcOpenEx ...
+ Got following connect_param string: 
+   ASHOST=192.168.0.62 SYSNR=30 CLIENT=312 USER=interface PASSWD=******* 
+<<< RfcOpenEx failed
+
+
+
+**** ERROR file opened at 20150424 110713 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:139759019845376 Error in program 'httpd2-prefork': ======> 
+
+>>> RfcOpenEx ...
+ Got following connect_param string: 
+   ASHOST=192.168.0.62 SYSNR=30 CLIENT=312 USER=interface PASSWD=******* 
+<<< RfcOpenEx failed
+
+
+
+**** ERROR file opened at 20150424 110946 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:139759019845376 Error in program 'httpd2-prefork': ======> SAP_CMINIT3 : rc=20 > Connect to SAP gateway failed
+Connect_PM  GWHOST=192.168.0.33, GWSERV=sapgw10, SYSNR=10
+
+LOCATION    CPIC (TCP/IP) on local host
+ERROR       partner not reached (host 192.168.0.33, service 3310)
+TIME        Fri Apr 24 11:09:46 201
+RELEASE     640
+COMPONENT   NI (network interface)
+VERSION     37
+RC          -10
+MODULE      nixxi_r_mt.cpp
+LINE        8840
+DETAIL      NiPConnect2
+SYSTEM CALL SiPeekPendConn
+ERRNO       111
+ERRNO TEXT  Connection refused
+COUNTER     1
+
+T:139759019845376 Error in program 'httpd2-prefork': ======> 
+
+>>> RfcOpenEx ...
+ Got following connect_param string: 
+   ASHOST=192.168.0.33 SYSNR=10 CLIENT=120 USER=iming PASSWD=******* 
+<<< RfcOpenEx failed
+
+
+>TS> Fri Apr 24 11:13:01 2015
+T:139759019845376 Error in program 'httpd2-prefork': ======> SAP_CMINIT3 : rc=20 > Connect to SAP gateway failed
+Connect_PM  GWHOST=192.168.0.33, GWSERV=sapgw10, SYSNR=10
+
+LOCATION    CPIC (TCP/IP) on local host
+ERROR       partner not reached (host 192.168.0.33, service 3310)
+TIME        Fri Apr 24 11:13:01 201
+RELEASE     640
+COMPONENT   NI (network interface)
+VERSION     37
+RC          -10
+MODULE      nixxi_r_mt.cpp
+LINE        8831
+DETAIL      NiPConnect2
+SYSTEM CALL SiPeekPendConn
+ERRNO       111
+ERRNO TEXT  Connection refused
+COUNTER     4
+
+T:139759019845376 Error in program 'httpd2-prefork': ======> 
+
+>>> RfcOpenEx ...
+ Got following connect_param string: 
+   ASHOST=192.168.0.33 SYSNR=10 CLIENT=120 USER=iming PASSWD=******* 
+<<< RfcOpenEx failed
+
+
+>TS> Fri Apr 24 11:13:49 2015
+T:139759019845376 Error in program 'httpd2-prefork': ======> SAP_CMINIT3 : rc=20 > Connect to SAP gateway failed
+Connect_PM  GWHOST=192.168.0.33, GWSERV=sapgw10, SYSNR=10
+
+LOCATION    CPIC (TCP/IP) on local host
+ERROR       partner not reached (host 192.168.0.33, service 3310)
+TIME        Fri Apr 24 11:13:49 201
+RELEASE     640
+COMPONENT   NI (network interface)
+VERSION     37
+RC          -10
+MODULE      nixxi_r_mt.cpp
+LINE        8840
+DETAIL      NiPConnect2
+SYSTEM CALL SiPeekPendConn
+ERRNO       111
+ERRNO TEXT  Connection refused
+COUNTER     2
+
+T:139759019845376 Error in program 'httpd2-prefork': ======> 
+
+>>> RfcOpenEx ...
+ Got following connect_param string: 
+   ASHOST=192.168.0.33 SYSNR=10 CLIENT=120 USER=iming PASSWD=******* 
+<<< RfcOpenEx failed
+
+
+
+**** ERROR file opened at 20150622 103536 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:139929649981184 Error in program 'httpd2-prefork': ======> The function module "ZBAPI_INSERT_ATTRIBUTE_MAT" cannot be used for 'remote' calls.
+T:139929649981184 Error in program 'httpd2-prefork': <* RfcReceive [10] : returns 3:RFC_SYS_EXCEPTION
+T:139929649981184 Error in program 'httpd2-prefork': <* RfcCallReceive [10] : returns 3:RFC_SYS_EXCEPTION
+>TS> Mon Jun 22 10:35:37 2015
+T:139929649981184 Error in program 'httpd2-prefork': ======> The function module "ZBAPI_INSERT_ATTRIBUTE_MAT" cannot be used for 'remote' calls.
+T:139929649981184 Error in program 'httpd2-prefork': <* RfcReceive [11] : returns 3:RFC_SYS_EXCEPTION
+T:139929649981184 Error in program 'httpd2-prefork': <* RfcCallReceive [11] : returns 3:RFC_SYS_EXCEPTION
+
+**** ERROR file opened at 20150622 104827 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:139929649981184 Error in program 'httpd2-prefork': ======> The function module "ZBAPI_INSERT_ATTRIBUTE_MAT" cannot be used for 'remote' calls.
+T:139929649981184 Error in program 'httpd2-prefork': <* RfcReceive [15] : returns 3:RFC_SYS_EXCEPTION
+T:139929649981184 Error in program 'httpd2-prefork': <* RfcCallReceive [15] : returns 3:RFC_SYS_EXCEPTION
+T:139929649981184 Error in program 'httpd2-prefork': ======> The function module "ZBAPI_INSERT_ATTRIBUTE_MAT" cannot be used for 'remote' calls.
+T:139929649981184 Error in program 'httpd2-prefork': <* RfcReceive [16] : returns 3:RFC_SYS_EXCEPTION
+T:139929649981184 Error in program 'httpd2-prefork': <* RfcCallReceive [16] : returns 3:RFC_SYS_EXCEPTION
+
+**** ERROR file opened at 20150623 105658 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:139929649981184 Error in program 'httpd2-prefork': ======> The function module "ZBAPI_GET_PLANT_BY_MATNUM" cannot be used for 'remote' calls.
+T:139929649981184 Error in program 'httpd2-prefork': <* RfcReceive [2] : returns 3:RFC_SYS_EXCEPTION
+T:139929649981184 Error in program 'httpd2-prefork': <* RfcCallReceive [2] : returns 3:RFC_SYS_EXCEPTION
+
+**** ERROR file opened at 20150803 133221 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:139929649981184 Error in program 'httpd2-prefork': ======> The function module "ZBAPI_MM_GETMATERIALNAME" cannot be used for 'remote' calls.
+T:139929649981184 Error in program 'httpd2-prefork': <* RfcReceive [1] : returns 3:RFC_SYS_EXCEPTION
+T:139929649981184 Error in program 'httpd2-prefork': <* RfcCallReceive [1] : returns 3:RFC_SYS_EXCEPTION
+
+**** ERROR file opened at 20150806 100653 WIT, SAP-REL 640,0,395 RFC-VER 3 1299223 MT-SL
+T:139929649981184 Error in program 'httpd2-prefork': ======> Name or password is incorrect (repeat logon)
+T:139929649981184 Error in program 'httpd2-prefork': <* RfcReceive [1] : returns 3:RFC_SYS_EXCEPTION
+T:139929649981184 Error in program 'httpd2-prefork': ======> 
+
+>>> RfcOpenEx ...
+ Got following connect_param string: 
+   ASHOST=192.168.0.33 SYSNR=10 CLIENT=120 USER=iming PASSWD=******* 
+<<< RfcOpenEx failed
+
+
+>TS> Thu Aug  6 10:06:59 2015
+T:139929649981184 Error in program 'httpd2-prefork': ======> Name or password is incorrect (repeat logon)
+T:139929649981184 Error in program 'httpd2-prefork': <* RfcReceive [2] : returns 3:RFC_SYS_EXCEPTION
+T:139929649981184 Error in program 'httpd2-prefork': ======> 
+
+>>> RfcOpenEx ...
+ Got following connect_param string: 
+   ASHOST=192.168.0.33 SYSNR=10 CLIENT=120 USER=iming PASSWD=******* 
+<<< RfcOpenEx failed
+
+
