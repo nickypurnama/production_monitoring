@@ -29,6 +29,8 @@ class report extends CI_CONTROLLER {
             redirect('site/login');
         }
 
+        $this->session->set_userdata('redirect_url', '/report/index');
+
         $client = $this->gdriveupload->getClient();
         
         $user_plant = $this->session->userdata('plant_prodmon');
@@ -2180,6 +2182,9 @@ class report extends CI_CONTROLLER {
         if($this->session->userdata('logged_state_prodmon') !== true){
             redirect('site/login');
         }
+        $this->session->set_userdata('redirect_url', '/report/panel_logistic');
+        $client = $this->gdriveupload->getClient();
+
         $user = $this->session->userdata('nik_prodmon');
         $user_plant = $this->session->userdata('plant_prodmon');
         $role = $this->session->userdata('role_prodmon');
@@ -2302,16 +2307,27 @@ class report extends CI_CONTROLLER {
         $this->excel->getActiveSheet()->getColumnDimension('G')->setWidth(25);
         $this->excel->getActiveSheet()->getColumnDimension('H')->setWidth(100);
 
-        header('Content-Type: application/vnd.ms-excel'); //mime type
-        header('Content-Disposition: attachment;filename="'.$namaFile.'"'); //tell browser what's the file name
-        header('Cache-Control: max-age=0'); //no cache
+        // header('Content-Type: application/vnd.ms-excel'); //mime type
+        // header('Content-Disposition: attachment;filename="'.$namaFile.'"'); //tell browser what's the file name
+        // header('Cache-Control: max-age=0'); //no cache
                      
         //save it to Excel5 format (excel 2003 .XLS file), change this to 'Excel2007' (and adjust the filename extension, also the header mime type)
         //if you want to save it as .XLSX Excel 2007 format
         $objWriter = PHPExcel_IOFactory::createWriter($this->excel, 'Excel5');  
         ob_end_clean();
         //force user to download the Excel file without writing it to server's HD
-        $objWriter->save('php://output');
+        // $objWriter->save('php://output');
+        $file_name = 'panel-logistic-'.$production_order.'-'.date('YmdHis').'.xls';
+        $objWriter->save(str_replace(__FILE__,'assets/storage/excel/'.$file_name,__FILE__));
+
+        $file = base_url('assets/storage/excel/'.$file_name);
+        $uploaded = $this->gdriveupload->uploadToClient($file, 'vivere-prodmon', $file_name);
+
+        $this->session->set_flashdata('msg','<div class="alert alert-success">
+                <a class="close" data-dismiss="alert"></a>
+                <strong>Success!</strong> Data berhasil diexport ke account Google Drive Anda
+            </div>');
+        redirect('report/panel_logistic');
     }
 
     function report_by_project($project = NULL){

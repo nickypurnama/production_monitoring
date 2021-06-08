@@ -11,7 +11,7 @@ class GDriveUpload
         $this->ci = &get_instance();
         // upload google drive
         $this->client = new Google_Client();
-        $this->client->setAuthConfig(dirname(__FILE__).'/vivere-upload-credential.json');
+        $this->client->setAuthConfig(dirname(__FILE__).'/service-access-credential.json');
         $this->client->setScopes(Google_Service_Drive::DRIVE);
         $this->service_drive = new Google_Service_Drive($this->client);
 
@@ -23,13 +23,13 @@ class GDriveUpload
         $this->service_sheet = new Google_Service_Sheets($this->client2);
 
 		// development
-		$this->folder_id = '1qUJNdNWk-vI8Yk9TriF80UmNAUX7qT3Q'; // folder development
+		$this->folder_id = '1kNro5tWWFVCkVLi2nlcPdZL2mGfNbWQ5'; // folder development
         $this->folder_template_id = '1AK0NYMLSaP3VRUjEW3fH2S5BfaGh5g2N';  // folder template
         $this->template_non_1600 = '1FfPjhPwgr62mVfyWsToBsxsVHbdSlNeiRSqpOG1OyvM';
         $this->template_1600 = '1dEUJfukm72CUMKjTzxfuFy34EnP46bhUegxfKVu_HCk';
 
 		// production
-		// $this->folder_id = '1pFSD2ifG-kJJIECsqMdm-GVCq8thQL9M';
+		// $this->folder_id = '14DcLgRuVcIyDvCuG9Nv2YksNRSAIzRmf';
     }
 
 	function uploadToServer($args, $folder_id)
@@ -183,11 +183,12 @@ class GDriveUpload
     function setToken($code)
     {
         $client = $this->getClient($code);
-        $redirect_uri = base_url('/report/index');
+        $redirect_uri = base_url($this->ci->session->userdata('redirect_url'));
+        // $redirect_uri = base_url('/report/index');
         header('Location: ' . filter_var($redirect_uri, FILTER_SANITIZE_URL));
     }
 
-    function uploadToClient($filesToSend, $folder_name, $file_name) {
+    function uploadToClient($filesToSend, $folder_name, $file_name, $mimetype=null) {
         $client = $this->getClient();
         $service = new Google_Service_Drive($client);
         
@@ -199,13 +200,33 @@ class GDriveUpload
             $folderId = $folder_exists['folder_id']; 
         }
 
+        if($mimetype=='pdf')
+        {
+            $type = 'application/pdf';
+        } else {
+            $type = 'application/vnd.ms-excel';
+        }
+
         $fileMetadata = new Google_Service_Drive_DriveFile();
         $fileMetadata->setName($file_name);
         $fileMetadata->setParents(array($folderId));
-        $fileMetadata->setMimeType('application/vnd.ms-excel');
+        $fileMetadata->setMimeType($type);
         
         $content = file_get_contents($filesToSend);
         $file = $service->files->create($fileMetadata, array(
+                'data'       => $content,
+                'uploadType' => 'multipart',
+                'fields'     => 'id'));
+    }
+
+    function uploadExcelToServer($filesToSend, $file_name) {
+        $fileMetadata = new Google_Service_Drive_DriveFile();
+        $fileMetadata->setName($file_name);
+        $fileMetadata->setParents(array($this->folder_id));
+        $fileMetadata->setMimeType('application/vnd.ms-excel');
+        
+        $content = file_get_contents($filesToSend);
+        $file = $this->service_drive->files->create($fileMetadata, array(
                 'data'       => $content,
                 'uploadType' => 'multipart',
                 'fields'     => 'id'));

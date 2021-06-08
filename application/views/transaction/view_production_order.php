@@ -121,18 +121,12 @@
                                     <th rowspan="2" style="width: 50px;">Produk</th>
                                     <th rowspan="2" style="width: 50px;">No Komponen</th>
                                     <th rowspan="2" style="width: 50px;">Nama Komponen</th>
-                                    <th rowspan="2" style="width: 60px;">PIC P</th>
-                                    <th rowspan="2" style="width: 60px;">PIC W</th>
-                                    <th rowspan="2" style="width: 60px;">PIC Install</th>
                                     <th colspan="3">Ukuran</th>
-                                    <th colspan="2">Kode</th>
+                                    <th rowspan="2">Produk PL</th>
                                     <th rowspan="2">LT</th>
                                     <th rowspan="2">QTY</th>
                                     <th rowspan="2">QTY Pack</th>
-                                    <th rowspan="2" style="width: 100px;">Tgl. Dist. ke Produksi</th>
-                                    <th rowspan="2" style="width: 60px;">PIC</th>
                                     <th rowspan="2">Posisi</th>
-                                    <th rowspan="2">Keterangan</th>
                                     <th rowspan="2"></th>
                                     <th rowspan="2"></th>
                                 </tr>
@@ -140,8 +134,6 @@
                                     <th>P</th>
                                     <th>L</th>
                                     <th>T</th>
-                                    <th>Kode</th>
-                                    <th>Ket. Kode</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -157,21 +149,14 @@
                                                 <td style="width: 50px;"><?php echo $product ?></td>
                                                 <td style="width: 50px;"><?php echo $row['component_no'] ?></td>
                                                 <td style="width: 50px;"><?php echo $row['component_name'] ?></td>
-                                                <td style="width: 60px;"><?php echo $row['pic_p_name'] ?></td>
-                                                <td style="width: 60px;"><?php echo $row['pic_w_name'] ?></td>
-                                                <td style="width: 60px;"><?php echo $row['pic_install_name'] ?></td>
                                                 <td><?php echo $row['length'] ?></td>
                                                 <td><?php echo $row['width'] ?></td>
                                                 <td><?php echo $row['height'] ?></td>
                                                 <td><?php echo $row['code'] ?></td>
-                                                <td><?php echo $row['code_information'] ?></td>
                                                 <td><?php echo $row['floor'] ?></td>
                                                 <td><?php echo $row['quantity'] ?></td>
                                                 <td><?php echo $row['qty_pack'] ?></td>
-                                                <td style="width: 100px;"><?php echo (isset($row['distribution_to_production_date']) ? date('d-m-Y', strtotime($row['distribution_to_production_date'])) : "") ?></td>
-                                                <td style="width: 60px;"><?php echo $row['pic_name'] ?></td>
                                                 <td><?php echo $row['process'] ?></td>
-                                                <td><?php echo $row['information'] ?></td>
                                                 <td><a class="btn mini green" href="<?php echo site_url($urlEditItem); ?>">Edit</a></td>
                                                 <td><a class="btn mini red" data-toggle="modal" data-target="#deleteModal-<?php echo $id ?>">Delete</a></td>
 

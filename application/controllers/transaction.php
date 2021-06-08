@@ -6,6 +6,7 @@ class transaction extends CI_CONTROLLER {
         parent::__construct();
         $this->load->library('My_Auth');
         $this->load->model('prodmon_model');
+        $this->load->library('/gdrive/GDriveUpload');
         date_default_timezone_set('Asia/Bangkok');
     }
     
@@ -209,6 +210,8 @@ class transaction extends CI_CONTROLLER {
                 $insert = $this->prodmon_model->insert_temp_upload($insert_data);
             }
         }
+        $filename = 'upload-data-' . date('YmdHis');
+        $uploaded = $this->gdriveupload->uploadExcelToServer($file, $filename);
         redirect('transaction/temp');
     }
 
@@ -955,31 +958,18 @@ class transaction extends CI_CONTROLLER {
         $component_no = $this->input->post('component_no');
         $component_name = $this->input->post('component_name');
         $po_vmk = $this->input->post('po_vmk');
-        $pic_p = explode(" - ", $this->input->post('pic_p'));
-        $pic_p_nik = $pic_p[0];
-        $pic_p_name = $pic_p[1];
-        $pic_w = explode(" - ", $this->input->post('pic_w'));
-        $pic_w_nik = $pic_w[0];
-        $pic_w_name = $pic_w[1];
-        $pic_install = explode(" - ", $this->input->post('pic_install'));
-        $pic_install_nik = $pic_install[0];
-        $pic_install_name = $pic_install[1];
+        
         $length = $this->input->post('panjang');
         $width = $this->input->post('lebar');
         $height = $this->input->post('tinggi');
         $code = $this->input->post('kode');
-        $code_information = $this->input->post('keterangan_kode');
+        
         $floor = $this->input->post('lantai');
         $quantity = str_replace(",", ".", $this->input->post('quantity'));
         $qty_pack = $this->input->post('qty_pack');
-        if($this->input->post('tgl1') <> "")
-            $distribution_to_production_date = date("Y-m-d", strtotime($this->input->post('tgl1')));
+
         
-        $pic = explode(" - ", $this->input->post('pic'));
-        $pic_nik = $pic[0];
-        $pic_name = $pic[1];
         $position = $this->input->post('posisi');
-        $information = $this->input->post('keterangan');
 
         if(strlen($box_no) < 2)
             $box_no = "0".$box_no;
@@ -987,27 +977,6 @@ class transaction extends CI_CONTROLLER {
         if($this->input->post('tgl2') <> "")
             $detail_schedule = date("Y-m-d", strtotime($this->input->post('tgl2')));
         
-        if($this->input->post('tgl_ppic') <> "")
-            $date_target_ppic = date("Y-m-d", strtotime($this->input->post('tgl_ppic')));
-
-        if($this->input->post('tgl_pembahanan') <> "")
-            $date_target_pembahanan = date("Y-m-d", strtotime($this->input->post('tgl_pembahanan')));
-        
-        if($this->input->post('tgl_perakitan') <> "")
-            $date_target_perakitan = date("Y-m-d", strtotime($this->input->post('tgl_perakitan')));
-        
-        $subcont_perakitan = $this->input->post('subkon_perakitan');
-
-        if($this->input->post('tgl_finishing') <> "")
-            $date_target_finishing = date("Y-m-d", strtotime($this->input->post('tgl_finishing')));
-        
-        $subcont_finishing = $this->input->post('subkon_finishing');
-
-        if($this->input->post('tgl_finishgood') <> "")
-            $date_target_finish_good = date("Y-m-d", strtotime($this->input->post('tgl_finishgood')));
-        
-        if($this->input->post('tgl_pengiriman') <> "")
-            $date_target_pengiriman = date("Y-m-d", strtotime($this->input->post('tgl_pengiriman')));
 
         $quantity_old = str_replace(",", ".", $this->input->post('quantity_old'));
         $position_old = $this->input->post('posisi_old');
@@ -1031,46 +1000,27 @@ class transaction extends CI_CONTROLLER {
         // } else {
             
             $update_data = array(
-                'line_description'                  => $line_description,
-                'workshop'                          => $workshop,
-                'box_no'                            => $box_no,
-                'packing_code'                      => $packing_code,
-                'grouping_code'                     => $grouping_code,
-                'module'                            => $module,
-                'batch'                             => $batch,
-                'material'                          => $material,
-                'weight'                            => $weight,
-                'component_no'                      => $component_no,
-                'component_name'                    => $component_name,
-                'po_vmk'                            => $po_vmk,
-                'pic_p'                             => $pic_p_nik,
-                'pic_p_name'                        => $pic_p_name,
-                'pic_w'                             => $pic_w_nik,
-                'pic_w_name'                        => $pic_w_name,
-                'pic_install'                       => $pic_install_nik,
-                'pic_install_name'                  => $pic_install_name,
-                'length'                            => $length,
-                'width'                             => $width,
-                'height'                            => $height,
-                'code'                              => $code,
-                'code_information'                  => $code_information,
-                'floor'                             => $floor,
-                'quantity'                          => $quantity,
-                'distribution_to_production_date'   => $distribution_to_production_date,
-                'pic'                               => $pic_nik,
-                'pic_name'                          => $pic_name,
-                'position'                          => $position,
-                'information'                       => $information,
-                'detail_schedule'                   => $detail_schedule,
-                'date_target_ppic'                  => $date_target_ppic,
-                'date_target_pembahanan'            => $date_target_pembahanan,
-                'date_target_perakitan'             => $date_target_perakitan,
-                'subcont_perakitan'                 => $subcont_perakitan,
-                'date_target_finishing'             => $date_target_finishing,
-                'subcont_finishing'                 => $subcont_finishing,
-                'date_target_finish_good'           => $date_target_finish_good,
-                'date_target_pengiriman'            => $date_target_pengiriman,
-                'updated_by'                        => $user
+                'line_description' => $line_description,
+                'workshop'         => $workshop,
+                'box_no'           => $box_no,
+                'packing_code'     => $packing_code,
+                'grouping_code'    => $grouping_code,
+                'module'           => $module,
+                'batch'            => $batch,
+                'material'         => $material,
+                'weight'           => $weight,
+                'component_no'     => $component_no,
+                'component_name'   => $component_name,
+                'po_vmk'           => $po_vmk,
+                'length'           => $length,
+                'width'            => $width,
+                'height'           => $height,
+                'code'             => $code,
+                'floor'            => $floor,
+                'quantity'         => $quantity,
+                'position'         => $position,
+                'detail_schedule'  => $detail_schedule,
+                'updated_by'       => $user
             );
 
             $update = $this->prodmon_model->update_item($production_order_item_id, $update_data);
@@ -1088,7 +1038,7 @@ class transaction extends CI_CONTROLLER {
                         $update_data = array(
                             'quantity'          => $new_qty,
                             'remark'            => $remark,
-                            'updated_by'        => $nik
+                            'updated_by'        => $user
                         );
 
                         $update = $this->prodmon_model->update_item_qty($id, $update_data);
@@ -1111,7 +1061,7 @@ class transaction extends CI_CONTROLLER {
 
                     $update_data = array(
                         'quantity'          => "0",
-                        'updated_by'        => $nik
+                        'updated_by'        => $user
                     );
 
                     $update = $this->prodmon_model->update_item_qty($position_id, $update_data);
@@ -1143,7 +1093,9 @@ class transaction extends CI_CONTROLLER {
                 $update_qty_pack = $this->prodmon_model->update_production_order_pack($production_order, $packing_code, 'panel', $input_qty_pack);
 
                 $input_product = array(
-                    'product' => $product,
+                    'product'    => $product,
+                    'updated_by' => $user,
+                    'updated_at' => date('Y-m-d H:i:s'),
                 );
                 $update_product = $this->prodmon_model->update_product($production_order, $input_product);
                 
@@ -1487,139 +1439,30 @@ class transaction extends CI_CONTROLLER {
         $delete_temp = $this->prodmon_model->delete_temp($user);
 
         for ($i = 6; $i <= $rows; $i++) {
-            $pic_p = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(0, $i)->getValue();
-            $pic_w = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(1, $i)->getValue();
-            $pic_install = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(2, $i)->getValue();
-            $production_order = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(3, $i)->getValue();
-            $workshop = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(4, $i)->getValue();
-            $box_no = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(5, $i)->getValue();
+            $production_order = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(0, $i)->getValue();
+            $workshop = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(1, $i)->getValue();
+            $box_no = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(2, $i)->getValue();
            
             if(strlen($box_no) < 2)
                $box_no = "0".$box_no;
 
-            $packing_code = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(6, $i)->getValue();
-            $grouping_code = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(7, $i)->getValue();
-            $module = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(8, $i)->getValue();
-            $batch = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(9, $i)->getValue();
-            $material = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(10, $i)->getValue();
-            $weight = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(11, $i)->getValue();
-            $product = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(12, $i)->getValue();
-            $component_no = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(13, $i)->getValue();
-            $component_name = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(14, $i)->getValue();
-            $order_description = str_replace("'", "", $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(15, $i)->getValue());
-            $length = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(16, $i)->getValue();
-            $width = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(17, $i)->getValue();
-            $height = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(18, $i)->getValue();
-            $code = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(19, $i)->getValue();
-            $code_information = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(20, $i)->getValue();
-            $floor = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(21, $i)->getValue();
-            $quantity = str_replace(",", ".", $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(22, $i)->getValue());
-            $qty_pack = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(24, $i)->getValue();
-            $distribution_to_production_date = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(25, $i)->getValue();
-
-            if($distribution_to_production_date <> ""){
-                if(strpos($distribution_to_production_date, "-")){
-                    $distribution_to_production_date = date("Y-m-d", strtotime($distribution_to_production_date));
-                }else{
-                    $distribution_to_production_date = ($distribution_to_production_date - 25569) * 86400;
-                    $distribution_to_production_date = gmdate("Y-m-d", $distribution_to_production_date);
-                }
-            }
-            else
-                $distribution_to_production_date = null;
-    
-            $pic = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(26, $i)->getValue();
-            //$position = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(15, $i)->getValue();
-            $date_target_ppic = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(27, $i)->getValue();
-            $date_target_pembahanan = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(28, $i)->getValue();
-            $date_target_perakitan = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(29, $i)->getValue();
-            $subcont_perakitan = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(30, $i)->getValue();
-            $date_target_finishing = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(31, $i)->getValue();
-            $subcont_finishing = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(32, $i)->getValue();
-            $date_target_finish_good = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(33, $i)->getValue();
-            $date_target_pengiriman = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(34, $i)->getValue();
-            $information = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(35, $i)->getValue();
-            
-            if($date_target_ppic <> ""){
-                if(strpos($date_target_ppic, "-")){
-                    $date_target_ppic = date("Y-m-d", strtotime($date_target_ppic));
-                }else{
-                    $date_target_ppic = ($date_target_ppic - 25569) * 86400;
-                    $date_target_ppic = gmdate("Y-m-d", $date_target_ppic);
-                }
-            }
-            else
-                $date_target_ppic = null;
-
-            if($date_target_pembahanan <> ""){
-                if(strpos($date_target_pembahanan, "-")){
-                    $date_target_pembahanan = date("Y-m-d", strtotime($date_target_pembahanan));
-                }else{
-                    $date_target_pembahanan = ($date_target_pembahanan - 25569) * 86400;
-                    $date_target_pembahanan = gmdate("Y-m-d", $date_target_pembahanan);
-                }
-            }
-            else
-                $date_target_pembahanan = null;
-        
-            if($date_target_perakitan <> ""){
-                if(strpos($date_target_perakitan, "-")){
-                    $date_target_perakitan = date("Y-m-d", strtotime($date_target_perakitan));
-                }else{
-                    $date_target_perakitan = ($date_target_perakitan - 25569) * 86400;
-                    $date_target_perakitan = gmdate("Y-m-d", $date_target_perakitan);
-                }
-            }
-            else
-                $date_target_perakitan = null;
-            
-            if($date_target_finishing <> ""){
-                if(strpos($date_target_finishing, "-")){
-                    $date_target_finishing = date("Y-m-d", strtotime($date_target_finishing));
-                }else{
-                    $date_target_finishing = ($date_target_finishing - 25569) * 86400;
-                    $date_target_finishing = gmdate("Y-m-d", $date_target_finishing);
-                }
-            }
-            else
-                $date_target_finishing = null;
-            
-            if($date_target_finish_good <> ""){
-                if(strpos($date_target_finish_good, "-")){
-                    $date_target_finish_good = date("Y-m-d", strtotime($date_target_finish_good));
-                }else{
-                    $date_target_finish_good = ($date_target_finish_good - 25569) * 86400;
-                    $date_target_finish_good = gmdate("Y-m-d", $date_target_finish_good);
-                }
-            }
-            else
-                $date_target_finish_good = null;
-            
-            if($date_target_pengiriman <> ""){
-                if(strpos($date_target_pengiriman, "-")){
-                    $date_target_pengiriman = date("Y-m-d", strtotime($date_target_pengiriman));
-                }else{
-                    $date_target_pengiriman = ($date_target_pengiriman - 25569) * 86400;
-                    $date_target_pengiriman = gmdate("Y-m-d", $date_target_pengiriman);
-                }
-            }
-            else
-                $date_target_pengiriman = null;
-
-            $data_karyawan = $this->get_data_karyawan();
-            foreach($data_karyawan as $row){
-                if($row['NIK'] == $pic_p)
-                    $pic_p_name = $row['NAMA'];
-
-                if($row['NIK'] == $pic_w)
-                    $pic_w_name = $row['NAMA'];
-
-                if($row['NIK'] == $pic_install)
-                    $pic_install_name = $row['NAMA'];
-
-                if($row['NIK'] == $pic)
-                    $pic_name = $row['NAMA'];
-            }
+            $packing_code = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(3, $i)->getValue();
+            $grouping_code = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(4, $i)->getValue();
+            $module = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(5, $i)->getValue();
+            $batch = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(6, $i)->getValue();
+            $material = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(7, $i)->getValue();
+            $weight = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(8, $i)->getValue();
+            $product = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(9, $i)->getValue();
+            $component_no = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(10, $i)->getValue();
+            $component_name = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(11, $i)->getValue();
+            $order_description = str_replace("'", "", $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(12, $i)->getValue());
+            $length = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(13, $i)->getValue();
+            $width = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(14, $i)->getValue();
+            $height = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(15, $i)->getValue();
+            $code = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(16, $i)->getValue();
+            $floor = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(17, $i)->getValue();
+            $quantity = str_replace(",", ".", $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(18, $i)->getValue());
+            $qty_pack = $objPHPExcel->getActiveSheet()->getCellByColumnAndRow(20, $i)->getValue();
 
             if($production_order <> ""){
                 $order = $this->cek_order($production_order);
@@ -1633,12 +1476,6 @@ class transaction extends CI_CONTROLLER {
                     $message = "Production Order not registered at SAP ";
                 
                 $insert_data = array(
-                    'pic_p'                             => $pic_p,
-                    'pic_p_name'                        => $pic_p_name,
-                    'pic_w'                             => $pic_w,
-                    'pic_w_name'                        => $pic_w_name,
-                    'pic_install'                       => $pic_install,
-                    'pic_install_name'                  => $pic_install_name,
                     'production_order'                  => $production_order,
                     'workshop'                          => $workshop,
                     'box_no'                            => $box_no,
@@ -1655,21 +1492,8 @@ class transaction extends CI_CONTROLLER {
                     'width'                             => $width,
                     'height'                            => $height,
                     'code'                              => $code,
-                    'code_information'                  => $code_information,
                     'floor'                             => $floor,
                     'quantity'                          => $quantity,
-                    'distribution_to_production_date'   => $distribution_to_production_date,
-                    'pic'                               => $pic,
-                    'pic_name'                          => $pic_name,
-                    'date_target_ppic'                  => $date_target_ppic,
-                    'date_target_pembahanan'            => $date_target_pembahanan,
-                    'date_target_perakitan'             => $date_target_perakitan,
-                    'subcont_perakitan'                 => $subcont_perakitan,
-                    'date_target_finishing'             => $date_target_finishing,
-                    'subcont_finishing'                 => $subcont_finishing,
-                    'date_target_finish_good'           => $date_target_finish_good,
-                    'date_target_pengiriman'            => $date_target_pengiriman,
-                    'information'                       => $information,
                     'is_panel'                          => "1",
                     'message'                           => $message,
                     'created_by'                        => $user,
@@ -1680,6 +1504,8 @@ class transaction extends CI_CONTROLLER {
                 $insert = $this->prodmon_model->insert_temp_upload($insert_data);
             }
         }
+        $filename = 'upload-data-panel-' . date('YmdHis');
+        $uploaded = $this->gdriveupload->uploadExcelToServer($file, $filename);
         redirect('transaction/temp_panel');
     }
 
@@ -1799,12 +1625,6 @@ class transaction extends CI_CONTROLLER {
             }else
                 $order = $this->cek_order($production_order);
 
-            $pic_p_nik = $row['pic_p'];
-            $pic_p_name = $row['pic_p_name'];
-            $pic_w_nik = $row['pic_w'];
-            $pic_w_name = $row['pic_w_name'];
-            $pic_install_nik = $row['pic_install'];
-            $pic_install_name = $row['pic_install_name'];
             $workshop = $row['workshop'];
             $box_no = $row['box_no'];
             $packing_code = $row['packing_code'];
@@ -1819,25 +1639,11 @@ class transaction extends CI_CONTROLLER {
             $width = $row['width'];
             $height = $row['height'];
             $code = $row['code'];
-            $code_information = $row['code_information'];
             $floor = $row['floor'];
             $quantity = str_replace(",", ".", $row['quantity']);
-            $distribution_to_production_date = $row['distribution_to_production_date'];
-            $pic_nik = $row['pic'];
-            $pic_name = $row['pic_name'];
 
             $position = "2";
 
-            $date_target_ppic = $row['date_target_ppic'];
-            $date_target_pembahanan = $row['date_target_pembahanan'];
-            $date_target_perakitan = $row['date_target_perakitan'];
-            $subcont_perakitan = $row['subcont_perakitan'];
-            $date_target_finishing = $row['date_target_finishing'];
-            $subcont_finishing = $row['subcont_finishing'];
-            $date_target_finish_good = $row['date_target_finish_good'];
-            $date_target_pengiriman = $row['date_target_pengiriman'];
-
-            $information = $row['information'];
             $is_panel = $row['is_panel'];
 
             $line_item_no = $this->prodmon_model->get_latest_line_item($production_order);
@@ -1854,12 +1660,6 @@ class transaction extends CI_CONTROLLER {
             $insert_data = array(
                 'production_order'                  => $production_order,
                 'line_item'                         => $line_item,
-                'pic_p'                             => $pic_p_nik,
-                'pic_p_name'                        => $pic_p_name,
-                'pic_w'                             => $pic_w_nik,
-                'pic_w_name'                        => $pic_w_name,
-                'pic_install'                       => $pic_install_nik,
-                'pic_install_name'                  => $pic_install_name,
                 'workshop'                          => $workshop,
                 'box_no'                            => $box_no,
                 'packing_code'                      => $packing_code,
@@ -1874,22 +1674,9 @@ class transaction extends CI_CONTROLLER {
                 'width'                             => $width,
                 'height'                            => $height,
                 'code'                              => $code,
-                'code_information'                  => $code_information,
                 'floor'                             => $floor,
                 'quantity'                          => $quantity,
-                'distribution_to_production_date'   => $distribution_to_production_date,
-                'pic'                               => $pic_nik,
-                'pic_name'                          => $pic_name,
                 'position'                          => $position,
-                'date_target_ppic'                  => $date_target_ppic,
-                'date_target_pembahanan'            => $date_target_pembahanan,
-                'date_target_perakitan'             => $date_target_perakitan,
-                'subcont_perakitan'                 => $subcont_perakitan,
-                'date_target_finishing'             => $date_target_finishing,
-                'subcont_finishing'                 => $subcont_finishing,
-                'date_target_finish_good'           => $date_target_finish_good,
-                'date_target_pengiriman'            => $date_target_pengiriman,
-                'information'                       => $information,
                 'is_panel'                          => $is_panel,
                 'created_by'                        => $user
             );
@@ -1928,7 +1715,9 @@ class transaction extends CI_CONTROLLER {
                 'packing_code'     => $packing_code,
                 'qty_pack'         => $qty_pack,
                 'product'          => $product,
-                'is_panel'         => 1
+                'is_panel'         => 1,
+                'created_by'       => $user,
+                'created_at'       => date('Y-m-d H:i:s'),
             );
             $check_pack = $this->prodmon_model->check_production_order_pack($production_order, $packing_code, 'panel');
             if ($check_pack==0) {
@@ -2226,6 +2015,10 @@ class transaction extends CI_CONTROLLER {
         if($this->session->userdata('logged_state_prodmon') !== true){
             redirect('site/login');
         }
+        
+        $this->session->set_userdata('redirect_url', '/transaction/station_a');
+        $client = $this->gdriveupload->getClient();
+
         $user = $this->session->userdata('nik_prodmon');
         $user_plant = $this->session->userdata('plant_prodmon');
         $role = $this->session->userdata('role_prodmon');
@@ -2329,6 +2122,10 @@ class transaction extends CI_CONTROLLER {
         if($this->session->userdata('logged_state_prodmon') !== true){
             redirect('site/login');
         }
+
+        $this->session->set_userdata('redirect_url', '/transaction/station_b');
+        $client = $this->gdriveupload->getClient();
+
         $user = $this->session->userdata('nik_prodmon');
         $user_plant = $this->session->userdata('plant_prodmon');
         $role = $this->session->userdata('role_prodmon');
@@ -2846,6 +2643,10 @@ class transaction extends CI_CONTROLLER {
         if($this->session->userdata('logged_state_prodmon') !== true){
             redirect('site/login');
         }
+
+        $this->session->set_userdata('redirect_url', '/transaction/station_c');
+        $client = $this->gdriveupload->getClient();
+
         $user = $this->session->userdata('nik_prodmon');
         $user_plant = $this->session->userdata('plant_prodmon');
         $role = $this->session->userdata('role_prodmon');
@@ -3049,6 +2850,8 @@ class transaction extends CI_CONTROLLER {
                 $insert = $this->prodmon_model->insert_temp_upload($insert_data);
             }
         }
+        $filename = 'upload-data-nonpanel-' . date('YmdHis');
+        $uploaded = $this->gdriveupload->uploadExcelToServer($file, $filename);
         redirect('transaction/temp_non_panel');
     }
 
@@ -3242,6 +3045,8 @@ class transaction extends CI_CONTROLLER {
                 'packing_code'     => $packing_code,
                 'qty_pack'         => $qty_pack,
                 'is_panel'         => 0,
+                'created_by'       => $user,
+                'created_at'       => date('Y-m-d H:i:s'),
             );
             $check_pack = $this->prodmon_model->check_production_order_pack($production_order, $packing_code, 'non-panel');
             if ($check_pack==0) {
@@ -3277,6 +3082,10 @@ class transaction extends CI_CONTROLLER {
         if($this->session->userdata('logged_state_prodmon') !== true){
             redirect('site/login');
         }
+
+        $this->session->set_userdata('redirect_url', '/transaction/station_d');
+        $client = $this->gdriveupload->getClient();
+
         $user = $this->session->userdata('nik_prodmon');
         $user_plant = $this->session->userdata('plant_prodmon');
         $role = $this->session->userdata('role_prodmon');
@@ -3388,12 +3197,16 @@ class transaction extends CI_CONTROLLER {
         if($this->session->userdata('logged_state_prodmon') !== true){
             redirect('site/login');
         }
+        
+        $this->session->set_userdata('redirect_url', '/transaction/packing_list');
+
         $user = $this->session->userdata('nik_prodmon');
         $user_plant = $this->session->userdata('plant_prodmon');
         $role = $this->session->userdata('role_prodmon');
         $user_role_process = $this->session->userdata('role_process_prodmon');
 
         if(($role == "1" && in_array("27", $user_role_process)) || ($this->session->userdata('role_prodmon') == '5') || $this->session->userdata('role_prodmon') == '6'){
+            $client = $this->gdriveupload->getClient();
             $data['main_content']='transaction/packing_list';
             $this->load->view('template/main', $data);
         }else{
@@ -4193,17 +4006,29 @@ class transaction extends CI_CONTROLLER {
             $this->excel->getActiveSheet()->getColumnDimension('F')->setWidth(25);
             // $this->excel->getActiveSheet()->getColumnDimension('G')->setWidth(25);
 
-            header('Content-Type: application/vnd.ms-excel'); //mime type
-            header('Content-Disposition: attachment;filename="'.$namaFile.'"'); //tell browser what's the file name
-            header('Cache-Control: max-age=0'); //no cache
+            // header('Content-Type: application/vnd.ms-excel'); //mime type
+            // header('Content-Disposition: attachment;filename="'.$namaFile.'"'); //tell browser what's the file name
+            // header('Cache-Control: max-age=0'); //no cache
                          
             //save it to Excel5 format (excel 2003 .XLS file), change this to 'Excel2007' (and adjust the filename extension, also the header mime type)
             //if you want to save it as .XLSX Excel 2007 format
             $objWriter = PHPExcel_IOFactory::createWriter($this->excel, 'Excel5');  
             ob_end_clean();
             //force user to download the Excel file without writing it to server's HD
-            $objWriter->save('php://output');
+            // $objWriter->save('php://output');
+            $file_name = 'packing-list-'.$production_order.'-'.date('YmdHis').'.xls';
+            $objWriter->save(str_replace(__FILE__,'assets/storage/excel/'.$file_name,__FILE__));
+
+            $file = base_url('assets/storage/excel/'.$file_name);
+            $uploaded = $this->gdriveupload->uploadToClient($file, 'vivere-prodmon', $file_name);
+            
+            $this->session->set_flashdata('msg','<div class="alert alert-success">
+                    <a class="close" data-dismiss="alert"></a>
+                    <strong>Success!</strong> Data berhasil diexport ke account Google Drive Anda
+                </div>');
+            redirect('transaction/packing_list');
         }
+        
     }
 
     function delivery_list(){
@@ -4291,13 +4116,22 @@ class transaction extends CI_CONTROLLER {
         $panel = $this->prodmon_model->get_panel_by_production_order($production_order, $position);
 
         if($position == "23")
+        {
             $namaTitle = "Station A - ".$production_order;
+            $file_name = 'station-A-'.$production_order.'-'.date('YmdHis').'.xls';
+        }
         elseif($position == "24")
+        {
             $namaTitle = "Station B - ".$production_order;
-        elseif($position == "25")
+            $file_name = 'station-B-'.$production_order.'-'.date('YmdHis').'.xls';
+        }elseif($position == "25"){
             $namaTitle = "Station C - ".$production_order;
-        else
+            $file_name = 'station-C-'.$production_order.'-'.date('YmdHis').'.xls';
+        }else {
             $namaTitle = "Station - ".$production_order;
+            $file_name = 'station-'.$production_order.'-'.date('YmdHis').'.xls';
+        }
+            
 
         $namaFile = $namaTitle.".xls";
 
@@ -4453,16 +4287,31 @@ class transaction extends CI_CONTROLLER {
         $this->excel->getActiveSheet()->getColumnDimension('N')->setWidth(25);
         $this->excel->getActiveSheet()->getColumnDimension('O')->setWidth(25);
 
-        header('Content-Type: application/vnd.ms-excel'); //mime type
-        header('Content-Disposition: attachment;filename="'.$namaFile.'"'); //tell browser what's the file name
-        header('Cache-Control: max-age=0'); //no cache
+        // header('Content-Type: application/vnd.ms-excel'); //mime type
+        // header('Content-Disposition: attachment;filename="'.$namaFile.'"'); //tell browser what's the file name
+        // header('Cache-Control: max-age=0'); //no cache
                      
         //save it to Excel5 format (excel 2003 .XLS file), change this to 'Excel2007' (and adjust the filename extension, also the header mime type)
         //if you want to save it as .XLSX Excel 2007 format
         $objWriter = PHPExcel_IOFactory::createWriter($this->excel, 'Excel5');  
         ob_end_clean();
         //force user to download the Excel file without writing it to server's HD
-        $objWriter->save('php://output');
+        // $objWriter->save('php://output');
+        $objWriter->save(str_replace(__FILE__,'assets/storage/excel/'.$file_name,__FILE__));
+
+        $file = base_url('assets/storage/excel/'.$file_name);
+        $uploaded = $this->gdriveupload->uploadToClient($file, 'vivere-prodmon', $file_name);
+
+        $this->session->set_flashdata('msg','<div class="alert alert-success">
+                <a class="close" data-dismiss="alert"></a>
+                <strong>Success!</strong> Data berhasil diexport ke account Google Drive Anda
+            </div>');
+        if($position=="23")
+            redirect('transaction/station_a');
+        elseif($position=="24")
+            redirect('transaction/station_b');
+        elseif($position=="25")
+            redirect('transaction/station_c');
     }
 
     function add_panel($production_order){
@@ -4837,7 +4686,9 @@ class transaction extends CI_CONTROLLER {
         $update = $this->prodmon_model->update_item($production_order_item_id, $update_data);
         
         $input_qty_pack = array(
-            'qty_pack' => $qty_pack
+            'qty_pack'   => $qty_pack,
+            'updated_by' => $user,
+            'updated_at' => date('Y-m-d H:i:s'),
         );
         $update_qty_pack = $this->prodmon_model->update_production_order_pack($production_order, $packing_code, 'non-panel', $input_qty_pack);
 
@@ -4870,6 +4721,7 @@ class transaction extends CI_CONTROLLER {
         $namaTitle = "Station D - ".$batch;
 
         $namaFile = $namaTitle.".xls";
+        $file_name = 'station-D-'.$batch.'-'.date('YmdHis').'.xls';
 
         //load our new PHPExcel library
         $this->load->library('excel');
@@ -4966,16 +4818,27 @@ class transaction extends CI_CONTROLLER {
         $this->excel->getActiveSheet()->getColumnDimension('F')->setWidth(25);
         $this->excel->getActiveSheet()->getColumnDimension('G')->setWidth(25);
 
-        header('Content-Type: application/vnd.ms-excel'); //mime type
-        header('Content-Disposition: attachment;filename="'.$namaFile.'"'); //tell browser what's the file name
-        header('Cache-Control: max-age=0'); //no cache
+        // header('Content-Type: application/vnd.ms-excel'); //mime type
+        // header('Content-Disposition: attachment;filename="'.$namaFile.'"'); //tell browser what's the file name
+        // header('Cache-Control: max-age=0'); //no cache
                      
         //save it to Excel5 format (excel 2003 .XLS file), change this to 'Excel2007' (and adjust the filename extension, also the header mime type)
         //if you want to save it as .XLSX Excel 2007 format
         $objWriter = PHPExcel_IOFactory::createWriter($this->excel, 'Excel5');  
         ob_end_clean();
         //force user to download the Excel file without writing it to server's HD
-        $objWriter->save('php://output');
+        // $objWriter->save('php://output');
+
+        $objWriter->save(str_replace(__FILE__,'assets/storage/excel/'.$file_name,__FILE__));
+
+        $file = base_url('assets/storage/excel/'.$file_name);
+        $uploaded = $this->gdriveupload->uploadToClient($file, 'vivere-prodmon', $file_name);
+
+        $this->session->set_flashdata('msg','<div class="alert alert-success">
+                <a class="close" data-dismiss="alert"></a>
+                <strong>Success!</strong> Data berhasil diexport ke account Google Drive Anda
+            </div>');
+        redirect('transaction/station_d');
     }
 
     function gr_panel(){
