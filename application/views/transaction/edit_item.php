@@ -208,6 +208,16 @@
                             <div class="row-fluid">
                                 <div class="span12">
                                     <div class="control-group">
+                                        <label class="control-label">Ket. Kode</label>
+                                        <div class="controls">
+                                            <input type="text" name="ket_kode" class="span4" value="<?php echo $item['code_information'] ?>">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row-fluid">
+                                <div class="span12">
+                                    <div class="control-group">
                                         <label class="control-label">Lantai</label>
                                         <div class="controls">
                                             <input type="text" name="lantai" class="span4" value="<?php echo $item['floor'] ?>" required="true">
@@ -231,6 +241,16 @@
                                         <label class="control-label">Qty Pack</label>
                                         <div class="controls">
                                             <input type="number" name="qty_pack" class="span4" value="<?php echo $item['qty_pack'] ?>">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row-fluid">
+                                <div class="span12">
+                                    <div class="control-group">
+                                        <label class="control-label">Keterangan</label>
+                                        <div class="controls">
+                                            <input type="text" name="information" class="span4" value="<?php echo $item['information'] ?>">
                                         </div>
                                     </div>
                                 </div>
@@ -266,6 +286,87 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="row-fluid">
+                                <div class="span12">
+                                    <div class="control-group">
+                                        <label class="control-label">PPIC</label>
+                                        <div class="controls">
+                                            <input class="m-wrap m-ctrl-medium span2" name="date_target_ppic" id="tgl_ppic" type="text" value="<?php echo (isset($item['date_target_ppic']) ? date('d-m-Y', strtotime($item['date_target_ppic'])) : "") ?>"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row-fluid">
+                                <div class="span12">
+                                    <div class="control-group">
+                                        <label class="control-label">Pembahanan</label>
+                                        <div class="controls">
+                                            <input class="m-wrap m-ctrl-medium span2" name="date_target_pembahanan" id="tgl_pembahanan" type="text" value="<?php echo (isset($item['date_target_pembahanan']) ? date('d-m-Y', strtotime($item['date_target_pembahanan'])) : "") ?>"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row-fluid">
+                                <div class="span12">
+                                    <div class="control-group">
+                                        <label class="control-label">Perakitan</label>
+                                        <div class="controls">
+                                            <input class="m-wrap m-ctrl-medium span2" name="date_target_perakitan" id="tgl_perakitan" type="text" value="<?php echo (isset($item['date_target_perakitan']) ? date('d-m-Y', strtotime($item['date_target_perakitan'])) : "") ?>"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row-fluid">
+                                <div class="span12">
+                                    <div class="control-group">
+                                        <label class="control-label">Subkon Perakitan</label>
+                                        <div class="controls">
+                                            <input type="text" name="subcont_perakitan" class="span4" value="<?php echo $item['subcon_perakitan'] ?>">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row-fluid">
+                                <div class="span12">
+                                    <div class="control-group">
+                                        <label class="control-label">Finishing</label>
+                                        <div class="controls">
+                                            <input class="m-wrap m-ctrl-medium span2" name="date_target_finishing" id="tgl_finishing" type="text" value="<?php echo (isset($item['date_target_finishing']) ? date('d-m-Y', strtotime($item['date_target_finishing'])) : "") ?>"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row-fluid">
+                                <div class="span12">
+                                    <div class="control-group">
+                                        <label class="control-label">Subkon Finishing</label>
+                                        <div class="controls">
+                                            <input type="text" name="subcont_finishing" class="span4" value="<?php echo $item['subcon_finishing'] ?>">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row-fluid">
+                                <div class="span12">
+                                    <div class="control-group">
+                                        <label class="control-label">Finish Good</label>
+                                        <div class="controls">
+                                            <input class="m-wrap m-ctrl-medium span2" name="date_target_finish_good" id="tgl_finishgood" type="text" value="<?php echo (isset($item['date_target_finish_good']) ? date('d-m-Y', strtotime($item['date_target_finish_good'])) : "") ?>"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row-fluid">
+                                <div class="span12">
+                                    <div class="control-group">
+                                        <label class="control-label">Pengiriman</label>
+                                        <div class="controls">
+                                            <input class="m-wrap m-ctrl-medium span2" name="date_target_pengiriman" id="tgl_pengiriman" type="text" value="<?php echo (isset($item['date_target_pengiriman']) ? date('d-m-Y', strtotime($item['date_target_perakitan'])) : "") ?>"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
                             <input type="hidden" name="quantity_old" class="span4" value="<?php echo $item['quantity'] ?>">
                             <input type="hidden" name="posisi_old" class="span4" value="<?php echo $item['position'] ?>">
                             <input type="hidden" name="production_order_item_id" class="span4" value="<?php echo $item['production_order_item_id'] ?>">

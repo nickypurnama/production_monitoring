@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "production-monitoring-0621",
+  "private_key_id": "1e2b05ec2428c1dcaa7a6a2ddbb99cdd3828f26c",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCrFJyjUoHfTEdF\niwbQ1TLMmDMuhttI5YPBF2oAZAe+xh6rZU4YXiQVosA4MkHFnSa5TRgMrgG3GuQk\n0jbB1pUa5on91eKO2ZUtzRmIE/KVHNOkfiGNYyXEm4Me+J4SrmsNL0afnLoAf3Zf\nXZvUQewazqQytPOhwQJ9iOpKPbGxdVb7QdjL8/GuMT+CZ6qWRkdBKHec5o4r9BTI\n0DvHVBqkDenKGBtn8kYUqMQUDTGrHlJP0nqgZZHEvB1sn3KFM7XXFf0txiNczllM\no9riWMAbHGbAbLwTiAOmx/VMIhXe/IUVhq1EJD5c4YZDhJViqtrr82TwVCQdD2z7\nIEI76yQrAgMBAAECggEARwSz73KROiZ6kapgZnGSeG8YFBDkV9L7Cj2Tgd0EgBPT\naHgR3ri5xwd8PvfR6NxPVm3j9WOIj7/IhGaFV5sh43xfPTG8Lmuxa0Vwe1Y4heDl\nFKxNdll5tK+P01wGlp+0DdGZwil35zwCYh1EUm0ZO5mbfPc0CepLA9zB0ZbhvFXY\nf3hV1dxZS65WqjgxFt3QuVOzd5x86lDygBLTmm+APpTQWYHxoYH79oM7TBf7gpGU\n6nFc76SBnV9CQI462edx6gVgr3q8UJEokV/aBfVVbZrissC1WNYPK85WzivmG1w0\n4e+Pa90AsNhsCjjvo/khjCeg7ZSKfIt4zVq2rqdvOQKBgQDmLDzAw01Fw7tgJsus\nzXwmVA5/v53AQ2OmNHtJPk3eDYQDejemt+qIc4E5vM3rQxUGpDtjyWbQXRAN59Ya\nUok+eAZORpp4rmzMl0HEC/uHh41uujguumUbdZ/659P3yz2NHx03fYk5EkzCqWbS\npInYZSz7voj6fjgadA9n7ALf6QKBgQC+Ru+ginLvRXirLft1/XUcEvVAvHL4PGEO\nFfa17usGv62T6o7bXSDWTVzNT/wdqUTx4ZJrGbKOhIAbIdi/1Qjz0mBaHeYpp651\nurW8A+GIvVXWtkde9QfJp1DSD6DqvTvDvb3ZWzwrM0zQCSmJ15R/NYrxy6ZcJ8Ov\neG7v23WK8wKBgQCGzTWvdzIUP7PHdjEmvRmOoP/01VYgOddsiaQCm1ijSasdFkDt\nhRz4WR0/oVHADQONZjXaFSP/t+ElI7gCpn/2c/jNcxAYyZ6ym4tKs/HVyA+O38Tz\nqPp6AIN3QLqljwQ3WBeWXhE1uX/3KZsslmycrXSQ41/5xF47L+mt5U0xsQKBgQCY\niVFsh9Df0/eKcxBVZFzPprsJrIkWS4Eaw6zF6MRs4piKLc1cOeorIlW1GdvpA1uL\n9ONmDHHCIqJ4Hcge8O9+VzZ6x+FNn2kSZB1wnkPdVLtNp07L5u7ZT9JQs8qypAUX\nRDK/3o37q+J2HAI6yKH44LmEYVf6JL6RGqEElBBE1QKBgBC0pY3yuAOxVCLDcYQK\n6G1/lfN10k+z2juUK2Yjy4ENGMXa7P1t3yMAF7OYVOy6yghfo3uQwMJxWDT3euE7\nxjOpGa0QPUQpGIMjstkxgzUG2JJK0zCpp45rQ+GpEdNJVfCJDma7GHzHhBwQ5dxT\nRg/gphsdXNl4oZ1i5T2yD9Nc\n-----END PRIVATE KEY-----\n",
+  "client_email": "upload@production-monitoring-0621.iam.gserviceaccount.com",
+  "client_id": "115023373447071340144",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/upload%40production-monitoring-0621.iam.gserviceaccount.com"
+}

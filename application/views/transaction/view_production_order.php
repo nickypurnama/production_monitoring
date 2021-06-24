@@ -121,12 +121,15 @@
                                     <th rowspan="2" style="width: 50px;">Produk</th>
                                     <th rowspan="2" style="width: 50px;">No Komponen</th>
                                     <th rowspan="2" style="width: 50px;">Nama Komponen</th>
+                                    <th rowspan="2">Line Description</th>
                                     <th colspan="3">Ukuran</th>
-                                    <th rowspan="2">Produk PL</th>
+                                    <th colspan="2">Kode</th>
                                     <th rowspan="2">LT</th>
                                     <th rowspan="2">QTY</th>
                                     <th rowspan="2">QTY Pack</th>
+                                    <th rowspan="2">Keterangan</th>
                                     <th rowspan="2">Posisi</th>
+                                    <th colspan="8">Target Produksi</th>
                                     <th rowspan="2"></th>
                                     <th rowspan="2"></th>
                                 </tr>
@@ -134,6 +137,16 @@
                                     <th>P</th>
                                     <th>L</th>
                                     <th>T</th>
+                                    <th>Kode</th>
+                                    <th>Ket. Kode</th>
+                                    <th>PPIC</th>
+                                    <th>Pembahanan</th>
+                                    <th>Perakitan</th>
+                                    <th>Subkon Perakitan</th>
+                                    <th>Finishing</th>
+                                    <th>Subkon Finishing</th>
+                                    <th>Finish Good</th>
+                                    <th>Pengiriman</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -149,14 +162,25 @@
                                                 <td style="width: 50px;"><?php echo $product ?></td>
                                                 <td style="width: 50px;"><?php echo $row['component_no'] ?></td>
                                                 <td style="width: 50px;"><?php echo $row['component_name'] ?></td>
+                                                <td style="width: 60px;"><?php echo $row['line_description'] ?></td>
                                                 <td><?php echo $row['length'] ?></td>
                                                 <td><?php echo $row['width'] ?></td>
                                                 <td><?php echo $row['height'] ?></td>
                                                 <td><?php echo $row['code'] ?></td>
+                                                <td><?php echo $row['code_information'] ?></td>
                                                 <td><?php echo $row['floor'] ?></td>
                                                 <td><?php echo $row['quantity'] ?></td>
                                                 <td><?php echo $row['qty_pack'] ?></td>
+                                                <td><?php echo $row['information'] ?></td>
                                                 <td><?php echo $row['process'] ?></td>
+                                                <td style="width: 100px;"><?php echo (isset($row['date_target_ppic']) ? date('d-m-Y', strtotime($row['date_target_ppic'])) : "") ?></td>
+                                                <td style="width: 100px;"><?php echo (isset($row['date_target_pembahanan']) ? date('d-m-Y', strtotime($row['date_target_pembahanan'])) : "") ?></td>
+                                                <td style="width: 100px;"><?php echo (isset($row['date_target_perakitan']) ? date('d-m-Y', strtotime($row['date_target_perakitan'])) : "") ?></td>
+                                                <td><?php echo $row['subcont_perakitan'] ?></td>
+                                                <td style="width: 100px;"><?php echo (isset($row['date_target_finishing']) ? date('d-m-Y', strtotime($row['date_target_finishing'])) : "") ?></td>
+                                                <td><?php echo $row['subcont_finishing'] ?></td>
+                                                <td style="width: 100px;"><?php echo (isset($row['date_target_finish_good']) ? date('d-m-Y', strtotime($row['date_target_finish_good'])) : "") ?></td>
+                                                <td style="width: 100px;"><?php echo (isset($row['date_target_pengiriman']) ? date('d-m-Y', strtotime($row['date_target_pengiriman'])) : "") ?></td>
                                                 <td><a class="btn mini green" href="<?php echo site_url($urlEditItem); ?>">Edit</a></td>
                                                 <td><a class="btn mini red" data-toggle="modal" data-target="#deleteModal-<?php echo $id ?>">Delete</a></td>
 

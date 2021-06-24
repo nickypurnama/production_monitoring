@@ -45,7 +45,7 @@
                             </div>
                             <div class="form-actions">
                                 <span class="pull-right">
-                                    <a class="btn brown" href="<?php echo base_url(); ?>layout/Template_Upload_Production_Order.xls" style="color: white; text-decoration: none;">Download Template</a>
+                                    <a class="btn brown" href="<?php echo base_url(); ?>layout/Template_Upload_Production_Order-new.xls" style="color: white; text-decoration: none;">Download Template</a>
                                     <button type="submit" class="btn brown"><i class="icon-ok"></i> Submit</button>
                                 </span>
                             </div>

@@ -963,12 +963,12 @@ class transaction extends CI_CONTROLLER {
         $width = $this->input->post('lebar');
         $height = $this->input->post('tinggi');
         $code = $this->input->post('kode');
+        $code_information = $this->input->post('ket_kode');
         
         $floor = $this->input->post('lantai');
         $quantity = str_replace(",", ".", $this->input->post('quantity'));
         $qty_pack = $this->input->post('qty_pack');
 
-        
         $position = $this->input->post('posisi');
 
         if(strlen($box_no) < 2)
@@ -977,6 +977,26 @@ class transaction extends CI_CONTROLLER {
         if($this->input->post('tgl2') <> "")
             $detail_schedule = date("Y-m-d", strtotime($this->input->post('tgl2')));
         
+        if($this->input->post('date_target_ppic') <> "")
+            $date_target_ppic = date("Y-m-d", strtotime($this->input->post('date_target_ppic')));
+        
+        if($this->input->post('date_target_pembahanan') <> "")
+            $date_target_pembahanan = date("Y-m-d", strtotime($this->input->post('date_target_pembahanan')));
+
+        if($this->input->post('date_target_perakitan') <> "")
+            $date_target_perakitan = date("Y-m-d", strtotime($this->input->post('date_target_perakitan')));
+        
+        if($this->input->post('date_target_finishing') <> "")
+            $date_target_finishing = date("Y-m-d", strtotime($this->input->post('date_target_finishing')));
+        
+        if($this->input->post('date_target_finish_good') <> "")
+            $date_target_finish_good = date("Y-m-d", strtotime($this->input->post('date_target_finish_good')));
+        
+        if($this->input->post('date_target_pengiriman') <> "")
+            $date_target_pengiriman = date("Y-m-d", strtotime($this->input->post('date_target_pengiriman')));
+
+        $subcont_perakitan = $this->input->post('subcont_perakitan');
+        $subcont_finishing = $this->input->post('subcont_finishing');
 
         $quantity_old = str_replace(",", ".", $this->input->post('quantity_old'));
         $position_old = $this->input->post('posisi_old');
@@ -1000,27 +1020,36 @@ class transaction extends CI_CONTROLLER {
         // } else {
             
             $update_data = array(
-                'line_description' => $line_description,
-                'workshop'         => $workshop,
-                'box_no'           => $box_no,
-                'packing_code'     => $packing_code,
-                'grouping_code'    => $grouping_code,
-                'module'           => $module,
-                'batch'            => $batch,
-                'material'         => $material,
-                'weight'           => $weight,
-                'component_no'     => $component_no,
-                'component_name'   => $component_name,
-                'po_vmk'           => $po_vmk,
-                'length'           => $length,
-                'width'            => $width,
-                'height'           => $height,
-                'code'             => $code,
-                'floor'            => $floor,
-                'quantity'         => $quantity,
-                'position'         => $position,
-                'detail_schedule'  => $detail_schedule,
-                'updated_by'       => $user
+                'line_description'        => $line_description,
+                'workshop'                => $workshop,
+                'box_no'                  => $box_no,
+                'packing_code'            => $packing_code,
+                'grouping_code'           => $grouping_code,
+                'module'                  => $module,
+                'batch'                   => $batch,
+                'material'                => $material,
+                'weight'                  => $weight,
+                'component_no'            => $component_no,
+                'component_name'          => $component_name,
+                'po_vmk'                  => $po_vmk,
+                'length'                  => $length,
+                'width'                   => $width,
+                'height'                  => $height,
+                'code'                    => $code,
+                'code_information'        => $code_information,
+                'floor'                   => $floor,
+                'quantity'                => $quantity,
+                'position'                => $position,
+                'detail_schedule'         => $detail_schedule,
+                'date_target_ppic'        => $date_target_ppic,
+                'date_target_pembahanan'  => $date_target_pembahanan,
+                'date_target_perakitan'   => $date_target_perakitan,
+                'subcont_perakitan'       => $subcont_perakitan,
+                'date_target_finishing'   => $date_target_finishing,
+                'subcont_finishing'       => $subcont_finishing,
+                'date_target_finish_good' => $date_target_finish_good,
+                'date_target_pengiriman'  => $date_target_pengiriman,
+                'updated_by'              => $user
             );
 
             $update = $this->prodmon_model->update_item($production_order_item_id, $update_data);
@@ -4024,7 +4053,8 @@ class transaction extends CI_CONTROLLER {
             
             $this->session->set_flashdata('msg','<div class="alert alert-success">
                     <a class="close" data-dismiss="alert"></a>
-                    <strong>Success!</strong> Data berhasil diexport ke account Google Drive Anda
+                    <strong>Success!</strong> Data berhasil diexport ke account Google Drive Anda. 
+                    <a href="https://drive.google.com/file/d/'.$uploaded.'/view?usp=drivesdk" target="_blank">Klik disini</a>
                 </div>');
             redirect('transaction/packing_list');
         }
@@ -4304,7 +4334,8 @@ class transaction extends CI_CONTROLLER {
 
         $this->session->set_flashdata('msg','<div class="alert alert-success">
                 <a class="close" data-dismiss="alert"></a>
-                <strong>Success!</strong> Data berhasil diexport ke account Google Drive Anda
+                <strong>Success!</strong> Data berhasil diexport ke account Google Drive Anda. 
+                <a href="https://drive.google.com/file/d/'.$uploaded.'/view?usp=drivesdk" target="_blank">Klik disini</a>
             </div>');
         if($position=="23")
             redirect('transaction/station_a');
@@ -4836,7 +4867,8 @@ class transaction extends CI_CONTROLLER {
 
         $this->session->set_flashdata('msg','<div class="alert alert-success">
                 <a class="close" data-dismiss="alert"></a>
-                <strong>Success!</strong> Data berhasil diexport ke account Google Drive Anda
+                <strong>Success!</strong> Data berhasil diexport ke account Google Drive Anda. 
+                <a href="https://drive.google.com/file/d/'.$uploaded.'/view?usp=drivesdk" target="_blank">Klik disini</a>
             </div>');
         redirect('transaction/station_d');
     }

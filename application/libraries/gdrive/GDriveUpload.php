@@ -11,25 +11,33 @@ class GDriveUpload
         $this->ci = &get_instance();
         // upload google drive
         $this->client = new Google_Client();
-        $this->client->setAuthConfig(dirname(__FILE__).'/service-access-credential.json');
+
+        if(ENVIRONMENT!=='production')
+            //development
+            $this->client->setAuthConfig(dirname(__FILE__).'/dev-production-monitoring-service.json');
+        else
+            //production    
+            $this->client->setAuthConfig(dirname(__FILE__).'/production-monitoring-080621.json');
+
         $this->client->setScopes(Google_Service_Drive::DRIVE);
         $this->service_drive = new Google_Service_Drive($this->client);
 
         // google sheet
         $this->client2 = new Google_Client();
         $this->client2->setAccessType('offline');
-        $this->client2->setAuthConfig(dirname(__FILE__).'/vivere-upload-credential.json');
+        // $this->client2->setAuthConfig(dirname(__FILE__).'/vivere-upload-credential.json');
         $this->client2->setScopes(Google_Service_Sheets::SPREADSHEETS);
         $this->service_sheet = new Google_Service_Sheets($this->client2);
 
-		// development
-		$this->folder_id = '1kNro5tWWFVCkVLi2nlcPdZL2mGfNbWQ5'; // folder development
+        if(ENVIRONMENT!=='production')
+		    // development
+		    $this->folder_id = '1QedH0wvGqXg7vhdheVO0EKmf3bnB-sQo';
+        else 
+            // production
+		    $this->folder_id = '14DcLgRuVcIyDvCuG9Nv2YksNRSAIzRmf';
         $this->folder_template_id = '1AK0NYMLSaP3VRUjEW3fH2S5BfaGh5g2N';  // folder template
         $this->template_non_1600 = '1FfPjhPwgr62mVfyWsToBsxsVHbdSlNeiRSqpOG1OyvM';
         $this->template_1600 = '1dEUJfukm72CUMKjTzxfuFy34EnP46bhUegxfKVu_HCk';
-
-		// production
-		// $this->folder_id = '14DcLgRuVcIyDvCuG9Nv2YksNRSAIzRmf';
     }
 
 	function uploadToServer($args, $folder_id)
@@ -217,6 +225,7 @@ class GDriveUpload
                 'data'       => $content,
                 'uploadType' => 'multipart',
                 'fields'     => 'id'));
+        return $file->getId();
     }
 
     function uploadExcelToServer($filesToSend, $file_name) {
@@ -278,7 +287,11 @@ class GDriveUpload
     {
         $client = new Google_Client();
         $client->setScopes(Google_Service_Drive::DRIVE);
-        $client->setAuthConfig(dirname(__FILE__).'/oauth-credential.json');
+        if(ENVIRONMENT!=='production')
+            $client->setAuthConfig(dirname(__FILE__).'/dev_client_secret.json');
+        else    
+            $client->setAuthConfig(dirname(__FILE__).'/client_secret_prod_mon.json');
+
         $client->setAccessType('offline');
 
         // Load previously authorized token from a file, if it exists.
@@ -291,11 +304,6 @@ class GDriveUpload
             $accessToken = json_decode(json_encode($token_access), true);
             $client->setAccessToken($accessToken);
         }
-        // $tokenPath = dirname(__FILE__).'/token.json';
-        // if (file_exists($tokenPath)) {
-        //     $accessToken = json_decode(file_get_contents($tokenPath), true);
-        //     $client->setAccessToken($accessToken);
-        // }
 
         // If there is no previous token or it's expired.
         if ($client->isAccessTokenExpired()) {
@@ -324,10 +332,6 @@ class GDriveUpload
                 {
                     $this->ci->session->set_userdata('access_token', json_encode($client->getAccessToken()));
                 }
-                // if (!file_exists(dirname($tokenPath))) {
-                //     mkdir(dirname($tokenPath), 0700, true);
-                // }
-                // file_put_contents($tokenPath, json_encode($client->getAccessToken()));
             }
             
         }

@@ -1168,7 +1168,8 @@ class report extends CI_CONTROLLER {
 
         $this->session->set_flashdata('msg','<div class="alert alert-success">
                 <a class="close" data-dismiss="alert"></a>
-                <strong>Success!</strong> Data berhasil diexport ke account Google Drive Anda
+                <strong>Success!</strong> Data berhasil diexport ke account Google Drive Anda. 
+                <a href="https://drive.google.com/file/d/'.$uploaded.'/view?usp=drivesdk" target="_blank">Klik disini</a>
             </div>');
         redirect('report/index');
     }
@@ -2173,7 +2174,8 @@ class report extends CI_CONTROLLER {
 
         $this->session->set_flashdata('msg','<div class="alert alert-success">
                 <a class="close" data-dismiss="alert"></a>
-                <strong>Success!</strong> Data berhasil diexport ke account Google Drive Anda
+                <strong>Success!</strong> Data berhasil diexport ke account Google Drive Anda. 
+                <a href="https://drive.google.com/file/d/'.$uploaded.'/view?usp=drivesdk" target="_blank">Klik disini</a>
             </div>');
         redirect('report/index');
     }
@@ -2325,7 +2327,8 @@ class report extends CI_CONTROLLER {
 
         $this->session->set_flashdata('msg','<div class="alert alert-success">
                 <a class="close" data-dismiss="alert"></a>
-                <strong>Success!</strong> Data berhasil diexport ke account Google Drive Anda
+                <strong>Success!</strong> Data berhasil diexport ke account Google Drive Anda. 
+                <a href="https://drive.google.com/file/d/'.$uploaded.'/view?usp=drivesdk" target="_blank">Klik disini</a>
             </div>');
         redirect('report/panel_logistic');
     }
