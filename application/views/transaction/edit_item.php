@@ -289,6 +289,16 @@
                             <div class="row-fluid">
                                 <div class="span12">
                                     <div class="control-group">
+                                        <label class="control-label">Tgl. Distribusi ke Produksi</label>
+                                        <div class="controls">
+                                            <input class="m-wrap m-ctrl-medium span2" name="distribution_to_production_date" id="distribution_to_production_date" type="text" value="<?php echo (isset($item['distribution_to_production_date']) ? date('d-m-Y', strtotime($item['distribution_to_production_date'])) : "") ?>"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row-fluid">
+                                <div class="span12">
+                                    <div class="control-group">
                                         <label class="control-label">PPIC</label>
                                         <div class="controls">
                                             <input class="m-wrap m-ctrl-medium span2" name="date_target_ppic" id="tgl_ppic" type="text" value="<?php echo (isset($item['date_target_ppic']) ? date('d-m-Y', strtotime($item['date_target_ppic'])) : "") ?>"/>

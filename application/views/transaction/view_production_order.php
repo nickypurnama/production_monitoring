@@ -129,6 +129,7 @@
                                     <th rowspan="2">QTY Pack</th>
                                     <th rowspan="2">Keterangan</th>
                                     <th rowspan="2">Posisi</th>
+                                    <th rowspan="2">Tgl. Distribusi ke Produksi</th>
                                     <th colspan="8">Target Produksi</th>
                                     <th rowspan="2"></th>
                                     <th rowspan="2"></th>
@@ -173,6 +174,7 @@
                                                 <td><?php echo $row['qty_pack'] ?></td>
                                                 <td><?php echo $row['information'] ?></td>
                                                 <td><?php echo $row['process'] ?></td>
+                                                <td style="width: 100px;"><?php echo (isset($row['distribution_to_production_date']) ? date('d-m-Y', strtotime($row['distribution_to_production_date'])) : "") ?></td>
                                                 <td style="width: 100px;"><?php echo (isset($row['date_target_ppic']) ? date('d-m-Y', strtotime($row['date_target_ppic'])) : "") ?></td>
                                                 <td style="width: 100px;"><?php echo (isset($row['date_target_pembahanan']) ? date('d-m-Y', strtotime($row['date_target_pembahanan'])) : "") ?></td>
                                                 <td style="width: 100px;"><?php echo (isset($row['date_target_perakitan']) ? date('d-m-Y', strtotime($row['date_target_perakitan'])) : "") ?></td>

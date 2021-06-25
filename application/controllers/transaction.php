@@ -977,6 +977,9 @@ class transaction extends CI_CONTROLLER {
         if($this->input->post('tgl2') <> "")
             $detail_schedule = date("Y-m-d", strtotime($this->input->post('tgl2')));
         
+        if($this->input->post('distribution_to_production_date') <> "")
+            $distribution_to_production_date = date("Y-m-d", strtotime($this->input->post('distribution_to_production_date')));
+            
         if($this->input->post('date_target_ppic') <> "")
             $date_target_ppic = date("Y-m-d", strtotime($this->input->post('date_target_ppic')));
         
@@ -1041,6 +1044,7 @@ class transaction extends CI_CONTROLLER {
                 'quantity'                => $quantity,
                 'position'                => $position,
                 'detail_schedule'         => $detail_schedule,
+                'distribution_to_production_date' => $distribution_to_production_date,
                 'date_target_ppic'        => $date_target_ppic,
                 'date_target_pembahanan'  => $date_target_pembahanan,
                 'date_target_perakitan'   => $date_target_perakitan,

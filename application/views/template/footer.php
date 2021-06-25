@@ -86,6 +86,10 @@
 				format: "dd-mm-yyyy",
 				autoclose: true
 			});
+			$('#distribution_to_production_date').datepicker({
+				format: "dd-mm-yyyy",
+				autoclose: true
+			});
 			$('#tgl_ppic').datepicker({
 				format: "dd-mm-yyyy",
 				autoclose: true
